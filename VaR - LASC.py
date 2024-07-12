@@ -2,6 +2,7 @@
 # coding: utf-8
 
 #setup de bibliotecas e ativo
+import streamlit as st
 import numpy as np
 import pandas as pd
 import datetime as dt
