@@ -73,15 +73,15 @@ def process_data(years, portfolio_value, days, confidence_interval):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-       st.subheader("preços de fechamento")
+       st.markdown("preços de fechamento")
        st.write(adj_close_df)
 
     with col2:
-       st.subheader("Log retornos")
+       st.markdown("Log retornos")
        st.write(log_returns)
     
     with col3:
-       st.subheader("retornos históricos")
+       st.markdown("retornos históricos")
        st.write(historical_returns)
 
 with st.form(key='input_var_data'):
