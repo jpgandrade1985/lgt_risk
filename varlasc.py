@@ -74,4 +74,6 @@ with st.form(key='input_var_data'):
 # Use the input data
 if submit_button:
     result = process_data(years, portfolio_value, days, confidence_interval)
+    st.text('Preços de fechamento')
+    st.write(adj_close_df)
     st.write(result)
