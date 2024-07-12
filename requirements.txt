@@ -3,5 +3,5 @@ pandas
 numpy
 appdirs
 yfinance
-matplotlib.pyplot
+matplotlib
 datetime
