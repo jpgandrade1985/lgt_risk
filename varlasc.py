@@ -62,7 +62,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     plt.legend()
     plt.show()
     
-    pass
+
 
 with st.form(key='input_var_data'):
     years = st.number_input('Tamanho do histórico (anos) - Sugestão: 3', step=1)
