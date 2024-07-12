@@ -53,9 +53,14 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
     print(VaR)
-    st.subheader('VaR histórico: ') 
-    st.subheader(VaR)
+    col1, col2 = st.columns(3)
 
+    with col1:
+        st.subheader('VaR histórico: ')
+
+    with col2:
+        st.subheader(VaR)
+    
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
     range_returns = range_returns.dropna()
@@ -70,17 +75,17 @@ def process_data(years, portfolio_value, days, confidence_interval):
     plt.legend()
     plt.show()
     
-    col1, col2, col3 = st.columns(3)
+    col3, col4, col5 = st.columns(3)
 
-    with col1:
+    with col3:
        st.markdown("preços de fechamento")
        st.write(adj_close_df)
 
-    with col2:
+    with col4:
        st.markdown("Log retornos")
        st.write(log_returns)
     
-    with col3:
+    with col5:
        st.markdown("retornos históricos")
        st.write(historical_returns)
 
