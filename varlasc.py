@@ -68,10 +68,10 @@ with st.form(key='input_var_data'):
     years = st.numner_input('Tamanho do histórico (anos)')
     portfolio_value = st.number_input('Valor Investido')
     days = st.number_input('Dias ')
-    confidence_level = st.float_input('Intervalo de confiança entre 0 e 1') #colocar droplist com valores sugeridos
+    confidence_interval = st.float_input('Intervalo de confiança entre 0 e 1') #colocar droplist com valores sugeridos
     submit_button = st.form_submit_button(label='Submit')
 
 # Use the input data
 if submit_button:
-    result = process_data(name, age)
+    result = process_data(years, portfolio_value, days, confidence_interval)
     st.write(result)
