@@ -45,7 +45,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     range_returns = range_returns.dropna()
     print(range_returns)
 
-    VaR = -np.percentile(range_returns, 100 - (confidence_interval * 100))*portfolio_value
+    VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
     print(VaR)
 
     return_window = days
