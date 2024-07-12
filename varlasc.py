@@ -68,7 +68,7 @@ with st.form(key='input_var_data'):
     years = st.number_input('Tamanho do histórico (anos)')
     portfolio_value = st.number_input('Valor Investido')
     days = st.number_input('Dias ')
-    confidence_interval = st.float_input('Intervalo de confiança entre 0 e 1')
+    confidence_interval = st.number_input('Intervalo de confiança entre 0 e 1')
     submit_button = st.form_submit_button(label='Submit')
 
 # Use the input data
