@@ -65,7 +65,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     pass
 
 with st.form(key='input_var_data'):
-    years = st.numner_input('Tamanho do histórico (anos)')
+    years = st.number_input('Tamanho do histórico (anos)')
     portfolio_value = st.number_input('Valor Investido')
     days = st.number_input('Dias ')
     confidence_interval = st.float_input('Intervalo de confiança entre 0 e 1') #colocar droplist com valores sugeridos
