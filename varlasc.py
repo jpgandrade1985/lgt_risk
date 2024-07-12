@@ -27,8 +27,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
         adj_close_df[ticker] = data['Adj Close']
 
     print(adj_close_df)
-    st.text('Preços de fechamento')
-    st.write(adj_close_df)
+    #st.text('Preços de fechamento')
+    #st.write(adj_close_df)
 
     #calcula log retornos
     log_returns = np.log(adj_close_df / adj_close_df.shift(1))
@@ -53,8 +53,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
     print(VaR)
-    #st.text('VaR histórico:')
-    #st.write(VaR)
+    st.header('VaR histórico: ')
+    st.header(VaR)
 
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
