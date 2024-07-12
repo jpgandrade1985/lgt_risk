@@ -89,6 +89,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
        st.markdown("retornos históricos")
        st.write(historical_returns)
 
+st.header('VaR LASC11')
 with st.form(key='input_var_data'):
     years = st.number_input('Tamanho do histórico (anos) - Sugestão: 3', step=1)
     portfolio_value = st.number_input('Valor Investido', step=1)
