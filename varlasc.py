@@ -45,7 +45,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     range_returns = range_returns.dropna()
     print(range_returns)
 
-    VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
+    VaR = -np.percentile(range_returns, 100 - confidence_interval)*portfolio_value
     print(VaR)
 
     return_window = days
@@ -65,11 +65,11 @@ def process_data(years, portfolio_value, days, confidence_interval):
     pass
 
 with st.form(key='input_var_data'):
-    years = st.number_input('Tamanho do histórico (anos)', step=1)
+    years = st.number_input('Tamanho do histórico (anos) - Sugestão: 3', step=1)
     portfolio_value = st.number_input('Valor Investido', step=1)
-    days = st.number_input('Dias ', step=1)
+    days = st.number_input('Dias de var. Sugestão: 365 ', step=1)
     options = [99, 95]
-    confidence_interval = st.multiselect('Choose options:', options)
+    confidence_interval = st.multiselect('Percentil:', options)
     submit_button = st.form_submit_button(label='Submit')
 
 # Use the input data
