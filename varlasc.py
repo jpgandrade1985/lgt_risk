@@ -53,7 +53,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
     print(VaR)
-    st.header('VaR histórico: ', (VaR))
+    st.header('VaR histórico: ', VaR)
 
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
