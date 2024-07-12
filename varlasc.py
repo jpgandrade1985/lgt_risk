@@ -27,6 +27,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
         adj_close_df[ticker] = data['Adj Close']
 
     print(adj_close_df)
+    st.text('Preços de fechamento')
+    st.write(adj_close_df)
 
     #calcula log retornos
     log_returns = np.log(adj_close_df / adj_close_df.shift(1))
@@ -74,6 +76,4 @@ with st.form(key='input_var_data'):
 # Use the input data
 if submit_button:
     result = process_data(years, portfolio_value, days, confidence_interval)
-    st.text('Preços de fechamento')
-    st.write(adj_close_df)
     st.write(result)
