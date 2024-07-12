@@ -65,10 +65,11 @@ def process_data(years, portfolio_value, days, confidence_interval):
     pass
 
 with st.form(key='input_var_data'):
-    years = st.number_input('Tamanho do histórico (anos)')
-    portfolio_value = st.number_input('Valor Investido')
-    days = st.number_input('Dias ')
-    confidence_interval = st.number_input('Intervalo de confiança entre 0 e 1')
+    years = st.number_input('Tamanho do histórico (anos)', step=1)
+    portfolio_value = st.number_input('Valor Investido', step=1)
+    days = st.number_input('Dias ', step=1)
+    options = ['0.99', '0.95']
+    confidence_interval = st.multiselect('Choose options:', options)
     submit_button = st.form_submit_button(label='Submit')
 
 # Use the input data
