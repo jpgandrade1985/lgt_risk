@@ -34,8 +34,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
     log_returns = np.log(adj_close_df / adj_close_df.shift(1))
     log_returns = log_returns.dropna()
     print(log_returns)
-    st.text('Log retornos')
-    st.write(log_returns)
+    #st.text('Log retornos')
+    #st.write(log_returns)
 
     #determina valor do portfólio investido no ativo
     weights = np.array([1/len(tickers)]*len(tickers))
@@ -44,8 +44,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
     #retorno histórico
     historical_returns = (log_returns * weights).sum(axis =1)
     print(historical_returns)
-    st.text('Retornos históricos')
-    st.write(historical_returns)
+    #st.text('Retornos históricos')
+    #st.write(historical_returns)
 
     range_returns = log_returns.rolling(window = days).sum()
     range_returns = range_returns.dropna()
@@ -53,8 +53,8 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     VaR = -np.percentile(range_returns, 100 - (confidence_interval))*portfolio_value
     print(VaR)
-    st.text('VaR histórico:')
-    st.write(VaR)
+    #st.text('VaR histórico:')
+    #st.write(VaR)
 
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
@@ -70,7 +70,19 @@ def process_data(years, portfolio_value, days, confidence_interval):
     plt.legend()
     plt.show()
     
+col1, col2, col3 = st.columns(3)
 
+    with col1:
+       st.header("preços de fechamento")
+       st.write(adj_close_df)
+
+    with col2:
+       st.header("Log retornos")
+       st.write(log_returns)
+    
+    with col3:
+       st.header("retornos históricos")
+       st.write(historical_returns)
 
 with st.form(key='input_var_data'):
     years = st.number_input('Tamanho do histórico (anos) - Sugestão: 3', step=1)
