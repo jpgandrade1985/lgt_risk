@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 #days = 365 #para quantos dias o VaR deve calcular
 #confidence_interval = 0.99 #intervalo de confiança (entre 0 e 1)
 
-def process_data(years, portfolio_value, days, confidence_interval)
+def process_data(years, portfolio_value, days, confidence_interval):
 
     endDate = dt.datetime.now()
     startDate = endDate - dt.timedelta(days=365*years)
