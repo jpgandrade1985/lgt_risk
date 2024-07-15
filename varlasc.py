@@ -86,7 +86,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
        st.write(log_returns)
     
     with col5:
-       st.markdown("retornos na janela informada")
+       st.markdown("retornos em R$")
        st.write(range_returns_dollar)
 
 st.header('VaR LASC11')
