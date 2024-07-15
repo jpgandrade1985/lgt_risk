@@ -68,7 +68,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     with col2:
         st.subheader(VaR)
-        st.(cvar)
+        st.subheader(cvar)
     
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
