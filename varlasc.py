@@ -81,7 +81,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
        st.markdown("retornos em R$")
        st.write(range_returns_dollar)
 
-    plt.hist(range_returns_dollar.dropna(), bins=10, density=True)
+    plt.hist(range_returns_dollar.dropna(), bins=100, density=True)
     plt.xlabel(f'Retorno do Portfólio {return_window} dias (R$)')
     plt.ylabel('Frequência')
     plt.title(f'Distribuição dos retornos do Portfólio - {return_window} dias (em R$)')
