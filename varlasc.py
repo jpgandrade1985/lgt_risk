@@ -66,15 +66,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     range_returns = range_returns.dropna()
 
     range_returns_dollar = range_returns * portfolio_value
-
-    plt.hist(range_returns_dollar.dropna(), bins=50, density=True)
-    plt.xlabel(f'Retorno do Portfólio {return_window} dias (R$)')
-    plt.ylabel('Frequência')
-    plt.title(f'Distribuição dos retornos do Portfólio - {return_window} dias (em R$)')
-    plt.axvline(-VaR, color='r', linestyle='dashed', linewidth=2, label=f'VaR - Intervalo de confiança {confidence_interval:.0%}')
-    plt.legend()
-    st.pyplot(plt.gcf())
-    
+  
     col3, col4, col5 = st.columns(3)
 
     with col3:
@@ -88,6 +80,14 @@ def process_data(years, portfolio_value, days, confidence_interval):
     with col5:
        st.markdown("retornos em R$")
        st.write(range_returns_dollar)
+
+    plt.hist(range_returns_dollar.dropna(), bins=50, density=True)
+    plt.xlabel(f'Retorno do Portfólio {return_window} dias (R$)')
+    plt.ylabel('Frequência')
+    plt.title(f'Distribuição dos retornos do Portfólio - {return_window} dias (em R$)')
+    plt.axvline(-VaR, color='r', linestyle='dashed', linewidth=2, label=f'VaR - Intervalo de confiança {confidence_interval:.0%}')
+    plt.legend()
+    st.pyplot(plt.gcf())
 
 st.header('VaR LASC11')
 with st.form(key='input_var_data'):
