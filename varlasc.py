@@ -50,7 +50,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     # cvar
     sorted_prices = np.sort(adj_close_df)
     num_samples = len(sorted_prices)
-    cvar_index = int((100 - confidence_level) * num_samples)
+    cvar_index = int((100 - confidence_interval) * num_samples)
     cvar = np.mean(sorted_prices[:cvar_index])
     
 
