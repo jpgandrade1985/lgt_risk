@@ -85,7 +85,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     plt.xlabel(f'Retorno do Portfólio {return_window} dias (R$)')
     plt.ylabel('Frequência')
     plt.title(f'Distribuição dos retornos do Portfólio - {return_window} dias (em R$)')
-    plt.axvline(-VaR, color='r', linestyle='dashed', linewidth=2, label=f'VaR - Intervalo de confiança {confidence_interval:%}')
+    plt.axvline(-VaR, color='r', linestyle='dashed', linewidth=2, label=f'VaR - Intervalo de confiança {confidence_interval}%')
     plt.legend()
     st.pyplot(plt.gcf())
 
