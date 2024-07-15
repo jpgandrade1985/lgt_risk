@@ -63,7 +63,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader('VaR histórico. Perda máx:')
+        st.subheader('VaR histórico:')
         st.subheader('cVaR:')
 
     with col2:
