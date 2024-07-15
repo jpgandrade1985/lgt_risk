@@ -56,7 +56,7 @@ def process_data(years, portfolio_value, days, confidence_interval):
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader('VaR histórico: ')
+        st.subheader('VaR histórico: max')
 
     with col2:
         st.subheader(VaR)
@@ -93,7 +93,7 @@ st.header('VaR LASC11')
 with st.form(key='input_var_data'):
     years = st.number_input('Tamanho do histórico (anos) - Sugestão: 3', step=1)
     portfolio_value = st.number_input('Valor Investido', step=1)
-    days = st.number_input('Dias de var. Sugestão: 365 ', step=1)
+    days = st.number_input('Dias de var. mais comuns: 1 ou 365 ', step=1)
     confidence_interval = st.number_input('Intervalo de Confiança (comuns 95 ou 99)', step=1)
     submit_button = st.form_submit_button(label='Submit')
 
