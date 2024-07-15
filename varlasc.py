@@ -47,6 +47,13 @@ def process_data(years, portfolio_value, days, confidence_interval):
     #st.text('Retornos históricos')
     #st.write(historical_returns)
 
+    # cvar
+    sorted_prices = np.sort(adj_returns)
+    num_samples = len(sorted_prices)
+    cvar_index = int((100 - confidence_level) * num_samples)
+    cvar = np.mean(sorted_prices[:cvar_index])
+    
+
     range_returns = log_returns.rolling(window = days).sum()
     range_returns = range_returns.dropna()
     print(range_returns)
@@ -57,9 +64,11 @@ def process_data(years, portfolio_value, days, confidence_interval):
 
     with col1:
         st.subheader('VaR histórico. Perda máx:')
+        st.subheader('cVaR:)
 
     with col2:
         st.subheader(VaR)
+        st.(cvar)
     
     return_window = days
     range_returns = historical_returns.rolling(window=return_window).sum()
