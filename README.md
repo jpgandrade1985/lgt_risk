@@ -5,6 +5,8 @@ Métricas de Risco dos Fundos da Legatus
 # Para Criar o Container
 Estou usado *fedora 40* com podman instalado
 
+    # dnf install podman -y
+
 Usei o podman para criar o container da seguinte maneira:
 
     $ podman build -t <container_name> -f Containerfile .
