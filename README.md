@@ -3,7 +3,7 @@ Métricas de Risco dos Fundos da Legatus
 
 ---
 # Para Criar o Container
-Estou usado fedora 40 com podman instalado
+Estou usado *fedora 40* com podman instalado
 
 Usei o podman para criar o container da seguinte maneira:
 
