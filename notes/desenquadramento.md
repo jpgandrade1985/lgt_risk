@@ -1,4 +1,6 @@
-### Controle de risco de desenquadramento
+### Controle de risco de desenquadramento e simulador
+
+#### check de enquadramento
 2 tabelas: política de investimento e alocação atual
 A política de investimentos descrita em formato de tabela com as colunas sendo as classes de ativos e percentual máximo de alocação de cada um
 A carteira precisa ser lançada em formato de tabela, com os valores das posições atual e definição da classe de ativo. 
