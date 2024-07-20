@@ -1,6 +1,3 @@
-# lgt_risk
-Métricas de Risco dos Fundos da Legatus
-
 ---
 # Para Criar o Container
 Estou usado *fedora 40* com podman instalado
